@@ -1,0 +1,51 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  margin-right: 20px;
+  
+}
+
+.top-bar-right {
+  margin-bottom: 20px;
+}
+
+.short {
+  max-width: 300px;
+}
+
+.superShort {
+  width: fit-content;
+}
+
+.topbar {
+  margin-bottom: 30px;
+}
+
+.block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-bottom: 40px;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.top-bar, .block, .large, .topbar, .topbar1, .new, #logForm, #top-bar {
+  margin-left: 50px;
+}
+
+.top-bar-left {
+  margin-top: 30px;
+}
+
+.columnShort {
+  max-width: 150px;
+}

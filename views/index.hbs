@@ -1,0 +1,35 @@
+<div class="top-bar">
+
+
+  {{#if auth}}
+  <a href="/profile" id="reg">Profile</a><a href="/logout" id="log">Log out</a><a href="">About us</a><br>
+  <div class="top-bar-left">
+    <h3>English exercises</h3>
+  </div>
+  <a href="/tasks" class="lower button">Get started</a>
+  <div id="taskShow"></div>
+  {{else}}
+  <div class="top-bar-right">
+    <a href="/signup" id="reg">Register</a><a href="/login" id="log">Login</a><a href="">About us</a>
+    <br>
+    <div class="top-bar-left">
+      <h3>English exercises</h3>
+    </div>
+    <div>Please register or login to start exercising</div><br>
+    <div>you can also</div>
+  </div>
+
+
+  
+  {{/if}}
+</div>
+<div class="block lower">
+
+  <form id="fetchPhrase">
+    <label for="phrase">Translate any phrase into Shakespeare language!</label>
+    <input id="fetchInput" class="short" type="text" name="phrase">
+    <button class="button" type="submit" id="fetchBtn">translate</button>
+  </form>
+</div>
+<div class="large" id="getPhrase"></div>
+<script defer src="/js/application.js"></script>

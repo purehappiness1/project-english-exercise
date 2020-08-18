@@ -1,0 +1,21 @@
+<h3>{{name}}</h3>
+<table>
+  <thead>
+    <tr>
+      <th class="columnShort">Task</th>
+      <th class="columnShort">Result</th>
+      <th class="columnShort">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each allStat}}
+    <tr>
+      <td class="columnShort">{{task}}</td>
+      <td class="columnShort">{{result}}/5</td>
+      <td class="columnShort">{{date}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a href="/profile" class="button button-outline">back</a>
+

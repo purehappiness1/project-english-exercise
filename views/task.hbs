@@ -1,0 +1,19 @@
+<div class="top-bar">
+  <form id="selectForm" data-title="{{taskid}}" action="/tasks/result/{{taskid}}" method="POST">
+
+    {{#each exercises}}
+    <div class="top-bar-left1">
+      <a>{{number}}</a><a>{{body}}</a>
+
+      <select id="{{number}}" onChange='myNewFunction("{{number}}")' class="superShort">
+        <option value="{{options.option1}}">{{options.option1}}</option>
+        <option value="{{options.option2}}">{{options.option2}}</option>
+      </select>
+
+      {{/each}}
+    </div>
+    <button type="submit">submit</button>
+    <a href="/tasks" class="button button-outline">back</a>
+  </form>
+</div>
+<script defer src="/js/new.js"></script>

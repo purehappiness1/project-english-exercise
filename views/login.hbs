@@ -1,0 +1,12 @@
+<form id="logForm" action="/login" method="POST" class="logo-container"><h3>Login</h3><br>
+<label for="email">Email</label>
+<input class="short" type="email" name="email" placeholder="Введите email"><br>
+<label for="password">Password</label>
+<input class="short" type="password" name="password" placeholder="Введите пароль"><br>
+<button type="submit" value="go!" class="button w-30 pad-2 round-1 text-c center">go!</button>
+<a href="/tasks" class="button button-outline">back</a>
+</form>
+
+{{#if error}}
+  <h3 id="error" style="text-align: center">Введены неверные данные! Повторите попытку!</h3>
+{{/if}}

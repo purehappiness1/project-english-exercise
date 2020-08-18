@@ -1,0 +1,41 @@
+<div class="container">
+ <div class="topbar">
+        <a href="/profile" id="reg">profile</a>
+        <a href="/logout">log out</a>
+        <a href="/">home</a><br>
+      </div>
+  <div class="row">
+    <div class="column">
+     
+      <div id="top-bar">
+        <ul>
+          <h3>Grammar</h3>
+        </ul>
+        {{#each allTasks}}
+        <li><a href="/tasks/{{_id}}">{{title}}</a></li>
+        {{/each}}
+      </div>
+    </div>
+    <div id="showTask"></div>
+    <div class="column">
+      <div id="top-bar">
+        <ul>
+          <h3>Vocabulary</h3>
+        </ul>
+        {{#each allTasks2}}
+        <li><a href="/tasks/{{_id}}">{{title}}</a></li>
+        {{/each}}
+      </div>
+    </div>
+    <div id="showTask"></div>
+  </div>
+  {{!-- <div class="column">.column</div>
+  <div class="column">.column</div> --}}
+</div>
+
+
+</div>
+
+
+
+</div>
