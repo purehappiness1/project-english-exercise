@@ -17,8 +17,16 @@ mongoose.connect(process.env.CONNECTION, {
 });
 
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+app.use(session({
+    secret: 'some key',
+    store: new MongoStore(),
+    resave: false,
+    saveUninitialized: false,
+}));
+
 const passport = require('passport');
-const passportSession = require('passport-session');
 const LocalStrategy = require('passport-local').Strategy;
 const sha256 = require('sha256');
 
@@ -34,7 +42,7 @@ const Game = require('./models/game');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(session({ secret: 'some key', resave: false, saveUninitialized: false }));
+// app.use(session({ secret: 'some key', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
