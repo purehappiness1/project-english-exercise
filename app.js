@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
@@ -17,14 +18,6 @@ mongoose.connect(process.env.CONNECTION, {
 });
 
 const session = require('express-session');
-//const MongoStore = require('connect-mongo')(session);
-
-// app.use(session({
-//     secret: 'foo',
-//     store: new MongoStore(),
-//     resave: false,
-    
-// }));
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -52,7 +45,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
-// parse application/json
 app.use(bodyParser.json({ extended: true }));
 
 const loginSettings = { successRedirect: '/profile', failureRedirect: '/login' };

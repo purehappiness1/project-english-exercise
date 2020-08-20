@@ -3,8 +3,6 @@
 .idea 
 .vscode
 .env
-.seeder
-.test
 
 */*.env 
 .env*/*
@@ -12,6 +10,7 @@
 # production
 .eslint
 .seeder
+.test
 # misc
 .DS_Store
 .env.local
