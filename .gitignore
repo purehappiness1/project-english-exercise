@@ -9,8 +9,8 @@
 */*.local
 # production
 .eslint
-.seeder
-.test
+seeder
+test
 # misc
 .DS_Store
 .env.local
