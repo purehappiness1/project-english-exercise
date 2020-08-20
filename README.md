@@ -13,7 +13,8 @@ Exercise english grammar and vocabulary
 
 Либо перейти в раздел со списком всех упражнений:
 
-![Alt text](public/images/exercises.png?raw=true "statistics")
+![Alt text](public/images/exercises.png?raw=true "exercises")
 
 После выбора упражнения вы попадаете на страницу с заданиями, где нужно выбрать правильные ответы и нажать кнопку 'Submit':
 
+![Alt text](public/images/exercise.png?raw=true "exercise")
