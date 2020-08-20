@@ -3,7 +3,8 @@
 .idea 
 .vscode
 .env
-
+.seeder
+.test
 
 */*.env 
 .env*/*
