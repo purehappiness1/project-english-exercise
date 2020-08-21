@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/english', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const User = require('./models/user');
 const Task = require('./models/task');
