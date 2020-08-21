@@ -8,6 +8,11 @@ const select3 = document.getElementById('3');
 const select4 = document.getElementById('4');
 const select5 = document.getElementById('5');
 
+router.use((req, res, next) => {
+  req.urlWorkaround = req.protocol + '://' + req.get('host')/* + req.originalUrl*/;
+  next();
+});
+
 let result = {
     "ans1": select1.options[select1.selectedIndex].text,
     "ans2": select2.options[select2.selectedIndex].text,
@@ -29,7 +34,7 @@ function myNewFunction() {
 selectForm.addEventListener('submit', async function(event) {
   event.preventDefault();
   const currentTask = event.target.dataset.title;
-  const x = await fetch(`http://localhost:3000/tasks/result/${currentTask}`, {
+  const x = await fetch(`${req.urlWorkaround}/tasks/result/${currentTask}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ result }),

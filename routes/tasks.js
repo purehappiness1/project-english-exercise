@@ -21,8 +21,13 @@ function authenticationMiddleware() {
   };
 }
 
+router.use((req, res, next) => {
+  req.urlWorkaround = req.protocol + '://' + req.get('host')/* + req.originalUrl*/;
+  next();
+});
+
 router.get('/', authenticationMiddleware(), async function (req, res) {
-  const x = await fetch('http://localhost:3000/gettasks');
+  const x = await fetch(`${req.urlWorkaround}/gettasks`);
   const tasks = await x.json();
   const allTasks = tasks.slice(0, 5);
   const allTasks2 = tasks.slice(5, 10);
@@ -30,14 +35,14 @@ router.get('/', authenticationMiddleware(), async function (req, res) {
 });
 
 router.get('/:id', async function (req, res) {
-  const x = await fetch(`http://localhost:3000/gettasks/${req.params.id}`);
+  const x = await fetch(`${req.urlWorkaround}/gettasks/${req.params.id}`);
   const task = await x.json();
   res.render('task', { taskid: task._id, exercises: task.exercises });
 });
 
 router.post('/result/:id', async function (req, res) {
   const x = req.body.result;
-  const y = await fetch(`http://localhost:3000/gettasks/${req.params.id}`);
+  const y = await fetch(`${req.urlWorkaround}/gettasks/${req.params.id}`);
   const currentTask = await y.json();
   let count = 0;
   if (x.ans1 === currentTask.exercises[0].options.correct) {
